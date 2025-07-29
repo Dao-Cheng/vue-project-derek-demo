@@ -4,16 +4,33 @@ import { createRouter, createWebHistory } from "vue-router";
 // 2.匯入組件(已建立)
 import Home from "@/views/Home.vue";
 import About from "@/views/About.vue";
+import Content1 from "@/views/Content1.vue";
+import Content2 from "@/views/Content2.vue";
 
 // 3.定義路由
 const routes = [
     {
         path: '/',
-        component: Home
+        component: Home,
+        name: 'Home'
     },
     {
         path: '/About',
-        component: About
+        component: About,
+        name: 'About',
+        children: [
+            {
+                path: 'Content1/:id',
+                component: Content1,
+                name: 'Content1',
+                props: true
+            },
+            {
+                path: 'Content2',
+                component: Content2,
+                name: 'Content2'
+            },
+        ]
     },
 ]
 

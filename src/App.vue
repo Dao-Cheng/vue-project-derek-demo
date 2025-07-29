@@ -29,8 +29,11 @@ import FToC from './components/FToC.vue';
     <!-- <Demo10 /> -->
     <!-- <FToC/> -->
     <p>
-        <RouterLink to="/">首頁</RouterLink> |
-        <RouterLink to="/About">關於我們</RouterLink> |
+
+        <RouterLink :to="{ path: '/' }">首頁</RouterLink> |
+        <RouterLink :to="{ name: 'About' }">關於我們</RouterLink> |
+        <!-- <RouterLink :to="{ name: 'Content1' }">關於我們1</RouterLink> |
+        <RouterLink :to="{ name: 'Content2' }">關於我們2</RouterLink> | -->
     </p>
     <hr />
     <RouterView />
