@@ -6,6 +6,9 @@ import Home from "@/views/Home.vue";
 import About from "@/views/About.vue";
 import Content1 from "@/views/Content1.vue";
 import Content2 from "@/views/Content2.vue";
+import NotFound from "@/views/NotFound.vue";
+import BMI from "@/views/BMI.vue";
+import FToC from "@/views/FToC.vue";
 
 // 3.定義路由
 const routes = [
@@ -20,7 +23,7 @@ const routes = [
         name: 'About',
         children: [
             {
-                path: 'Content1/:id',
+                path: 'Content1/:id?',
                 component: Content1,
                 name: 'Content1',
                 props: true
@@ -32,6 +35,17 @@ const routes = [
             },
         ]
     },
+    {
+        path: '/BMI',
+        component: BMI,
+        name: 'BMI'
+    },
+    {
+        path: '/FToC',
+        component: FToC,
+        name: 'FToC'
+    },
+    { path: '/:pathMatch(.*)*', component: NotFound, name: 'NotFound' },
 ]
 
 // 4.建立router實體
