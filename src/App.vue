@@ -41,6 +41,9 @@ import Demo9 from './components/Demo/Demo9.vue';
                         <RouterLink :to="{ name: 'About' }" class="nav-link">關於我們</RouterLink>
                     </li>
                     <li class="nav-item">
+                        <RouterLink :to="{ name: 'DemoList' }" class="nav-link">Demo</RouterLink>
+                    </li>
+                    <li class="nav-item">
                         <RouterLink :to="{ name: 'BMI' }" class="nav-link">1.BMI計算機</RouterLink>
                     </li>
                     <li class="nav-item">
@@ -51,19 +54,15 @@ import Demo9 from './components/Demo/Demo9.vue';
         </div>
     </nav>
 
-
-    <!-- <p> -->
-
-    <!-- <RouterLink :to="{ path: '/' }">首頁</RouterLink> |
-        <RouterLink :to="{ name: 'About' }">關於我們</RouterLink> |
-        <RouterLink :to="{ name: 'BMI' }">1.BMI計算機</RouterLink> |
-        <RouterLink :to="{ name: 'FToC' }">2.溫度轉換</RouterLink> | -->
-    <!-- <RouterLink :to="{ name: 'Content1' }">關於我們1</RouterLink> |
-        <RouterLink :to="{ name: 'Content2' }">關於我們2</RouterLink> | -->
-    <!-- </p> -->
-    <hr />
-    <RouterView />
+    <div class="content-div">
+        <RouterView />
+    </div>
 
 </template>
 
-<style scoped></style>
+<style scoped>
+.content-div {
+    margin: auto;
+    width: 80%;
+}
+</style>

@@ -9,6 +9,7 @@ import Content2 from "@/views/Content2.vue";
 import NotFound from "@/views/NotFound.vue";
 import BMI from "@/views/BMI.vue";
 import FToC from "@/views/FToC.vue";
+import DemoList from "@/views/DemoList.vue";
 
 // 3.定義路由
 const routes = [
@@ -44,6 +45,11 @@ const routes = [
         path: '/FToC',
         component: FToC,
         name: 'FToC'
+    },
+    {
+        path: '/DemoList',
+        component: DemoList,
+        name: 'DemoList'
     },
     { path: '/:pathMatch(.*)*', component: NotFound, name: 'NotFound' },
 ]
