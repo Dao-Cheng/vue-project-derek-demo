@@ -12,6 +12,7 @@ import FToC from "@/views/FToC.vue";
 import DemoList from "@/views/DemoList.vue";
 import StudentScore from "@/views/StudentScore.vue";
 import ToDoList from "@/views/ToDoList.vue";
+import Lifecycle from "@/views/Lifecycle.vue";
 
 // 3.定義路由
 const routes = [
@@ -63,6 +64,11 @@ const routes = [
         path: '/DemoList',
         component: DemoList,
         name: 'DemoList'
+    },
+    {
+        path: '/Lifecycle',
+        component: Lifecycle,
+        name: 'Lifecycle'
     },
     { path: '/:pathMatch(.*)*', component: NotFound, name: 'NotFound' },
 ]

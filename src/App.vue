@@ -1,16 +1,4 @@
 <script setup>
-
-import Demo1 from './components/Demo/Demo1.vue';
-import Demo10 from './components/Demo/Demo10.vue';
-import Demo2 from './components/Demo/Demo2.vue';
-import Demo3 from './components/Demo/Demo3.vue';
-import Demo4 from './components/Demo/Demo4.vue';
-import Demo5 from './components/Demo/Demo5.vue';
-import Demo6 from './components/Demo/Demo6.vue';
-import Demo7 from './components/Demo/Demo7.vue';
-import Demo8 from './components/Demo/Demo8.vue';
-import Demo9 from './components/Demo/Demo9.vue';
-
 </script>
 
 <template>
@@ -42,6 +30,9 @@ import Demo9 from './components/Demo/Demo9.vue';
                     </li>
                     <li class="nav-item">
                         <RouterLink :to="{ name: 'DemoList' }" class="nav-link">Demo</RouterLink>
+                    </li>
+                    <li class="nav-item">
+                        <RouterLink :to="{ name: 'Lifecycle' }" class="nav-link">生命週期</RouterLink>
                     </li>
                     <li class="nav-item">
                         <RouterLink :to="{ name: 'BMI' }" class="nav-link">1.BMI計算機</RouterLink>
