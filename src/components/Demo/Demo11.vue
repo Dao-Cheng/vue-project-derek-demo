@@ -4,6 +4,9 @@ const score = ref(100);
 
 const isLogin = ref(true);
 
+const visible = ref(true);
+
+
 </script>
 
 <template>
@@ -26,6 +29,11 @@ const isLogin = ref(true);
             <p>尚未登入</p>
         </template>
     </div>
+
+    <button @click="visible = !visible">
+        {{ visible ? '隱藏內容' : '顯示內容' }}
+    </button>
+    <p v-show="visible">Hello!!</p>
 
 </template>
 
