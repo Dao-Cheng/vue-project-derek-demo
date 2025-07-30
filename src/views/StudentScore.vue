@@ -36,7 +36,7 @@ const searchName = () => {
             </tr>
         </thead>
         <tbody>
-            <tr v-for="(item, index) in students">
+            <tr v-for="(item, index) in students" :key="item.id">
                 <td>{{ item.name }}</td>
                 <td>{{ item.chinese }}</td>
                 <td>{{ item.english }}</td>

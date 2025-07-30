@@ -11,6 +11,7 @@ import BMI from "@/views/BMI.vue";
 import FToC from "@/views/FToC.vue";
 import DemoList from "@/views/DemoList.vue";
 import StudentScore from "@/views/StudentScore.vue";
+import ToDoList from "@/views/ToDoList.vue";
 
 // 3.定義路由
 const routes = [
@@ -51,6 +52,12 @@ const routes = [
         path: '/StudentScore',
         component: StudentScore,
         name: 'StudentScore'
+    },
+
+    {
+        path: '/ToDoList',
+        component: ToDoList,
+        name: 'ToDoList'
     },
     {
         path: '/DemoList',

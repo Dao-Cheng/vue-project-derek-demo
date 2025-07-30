@@ -52,6 +52,9 @@ import Demo9 from './components/Demo/Demo9.vue';
                     <li class="nav-item">
                         <RouterLink :to="{ name: 'StudentScore' }" class="nav-link">3.學生成績單</RouterLink>
                     </li>
+                    <li class="nav-item">
+                        <RouterLink :to="{ name: 'ToDoList' }" class="nav-link">4.待辦事項</RouterLink>
+                    </li>
                 </ul>
             </div>
         </div>
