@@ -24,6 +24,9 @@ const selectedItem = ref(-1);
 import studentData from '../../data/student.json';
 const student = ref(studentData[5]);
 
+function changeFoodItems() {
+    foodItems.value = foodItems.value.filter(x => x.id > 5);
+}
 
 </script>
 
@@ -35,6 +38,7 @@ const student = ref(studentData[5]);
             {{ `${index}___${item.name}` }}
         </option>
     </select>
+    <button @click="changeFoodItems()">改變foodItems</button>
     <h1>選擇ID:{{ selectedItem }}</h1>
 
     <ul>

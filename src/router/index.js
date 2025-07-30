@@ -10,6 +10,7 @@ import NotFound from "@/views/NotFound.vue";
 import BMI from "@/views/BMI.vue";
 import FToC from "@/views/FToC.vue";
 import DemoList from "@/views/DemoList.vue";
+import StudentScore from "@/views/StudentScore.vue";
 
 // 3.定義路由
 const routes = [
@@ -45,6 +46,11 @@ const routes = [
         path: '/FToC',
         component: FToC,
         name: 'FToC'
+    },
+    {
+        path: '/StudentScore',
+        component: StudentScore,
+        name: 'StudentScore'
     },
     {
         path: '/DemoList',

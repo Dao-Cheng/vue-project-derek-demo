@@ -49,6 +49,9 @@ import Demo9 from './components/Demo/Demo9.vue';
                     <li class="nav-item">
                         <RouterLink :to="{ name: 'FToC' }" class="nav-link">2.溫度轉換</RouterLink>
                     </li>
+                    <li class="nav-item">
+                        <RouterLink :to="{ name: 'StudentScore' }" class="nav-link">3.學生成績單</RouterLink>
+                    </li>
                 </ul>
             </div>
         </div>
