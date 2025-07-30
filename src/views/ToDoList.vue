@@ -46,18 +46,20 @@ const doneCount = computed(() => {
 
     <table>
         <tbody>
-            <tr v-for="(item, key) in todos" :key="item.id">
-                <td>
-                    <input type="checkbox" v-model="item.isDone" />
-                </td>
-                <td>
-                    <span :class="{ done: item.isDone }">{{ item.text }}</span>
-                </td>
-                <td>
-                    <button class="btn btn-danger btn-sm" @click="removeTodo(item.id)"><i
-                            class="bi bi-trash"></i>刪除</button>
-                </td>
-            </tr>
+            <TransitionGroup>
+                <tr v-for="(item, key) in todos" :key="item.id">
+                    <td>
+                        <input type="checkbox" v-model="item.isDone" />
+                    </td>
+                    <td>
+                        <span :class="{ done: item.isDone }">{{ item.text }}</span>
+                    </td>
+                    <td>
+                        <button class="btn btn-danger btn-sm" @click="removeTodo(item.id)"><i
+                                class="bi bi-trash"></i>刪除</button>
+                    </td>
+                </tr>
+            </TransitionGroup>
         </tbody>
     </table>
     <p>共 {{ todos.length }} 項，已完成 {{ doneCount }} 項</p>
@@ -68,5 +70,19 @@ const doneCount = computed(() => {
 .done {
     text-decoration: line-through;
     color: grey;
+}
+
+.v-enter-active,
+.v-leave-active {
+    transition:
+        opacity 2s ease-out,
+        transform 2s cubic-bezier(1, .18, .46, 1.48);
+}
+
+
+.v-enter-from,
+.v-leave-to {
+    opacity: 0;
+    transform: translateX(30px);
 }
 </style>

@@ -14,9 +14,10 @@ import Demo10 from '@/components/Demo/Demo10.vue';
 import Demo11 from '@/components/Demo/Demo11.vue';
 import Demo12 from '@/components/Demo/Demo12.vue';
 import Demo13 from '@/components/Demo/Demo13.vue';
+import Lifecycle from './Lifecycle.vue';
 //                     0      1      2
 const componentList = [Demo1, Demo2, Demo3, Demo4, Demo5, Demo6,
-    Demo7, Demo8, Demo9, Demo10, Demo11, Demo12, Demo13];
+    Demo7, Demo8, Demo9, Demo10, Demo11, Demo12, Demo13, Lifecycle];
 
 const selected = ref(0);
 
@@ -34,7 +35,9 @@ const selected = ref(0);
 
     <hr />
 
-    <component :is="componentList[selected]"></component>
+    <KeepAlive>
+        <component :is="componentList[selected]"></component>
+    </KeepAlive>
 
 
 </template>
