@@ -55,8 +55,11 @@ import Demo9 from './components/Demo/Demo9.vue';
     </nav>
 
     <div class="content-div">
+
         <RouterView />
+
     </div>
+
 
 </template>
 
