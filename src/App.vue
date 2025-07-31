@@ -35,6 +35,9 @@
                         <RouterLink :to="{ name: 'Lifecycle' }" class="nav-link">生命週期</RouterLink>
                     </li>
                     <li class="nav-item">
+                        <RouterLink :to="{ name: 'Parent' }" class="nav-link">父子組件</RouterLink>
+                    </li>
+                    <li class="nav-item">
                         <RouterLink :to="{ name: 'BMI' }" class="nav-link">1.BMI計算機</RouterLink>
                     </li>
                     <li class="nav-item">
@@ -46,6 +49,7 @@
                     <li class="nav-item">
                         <RouterLink :to="{ name: 'ToDoList' }" class="nav-link">4.待辦事項</RouterLink>
                     </li>
+
                 </ul>
             </div>
         </div>

@@ -13,6 +13,7 @@ import DemoList from "@/views/DemoList.vue";
 import StudentScore from "@/views/StudentScore.vue";
 import ToDoList from "@/views/ToDoList.vue";
 import Lifecycle from "@/views/Lifecycle.vue";
+import Parent from "@/views/Parent.vue";
 
 // 3.定義路由
 const routes = [
@@ -69,6 +70,11 @@ const routes = [
         path: '/Lifecycle',
         component: Lifecycle,
         name: 'Lifecycle'
+    },
+    {
+        path: '/Parent',
+        component: Parent,
+        name: 'Parent'
     },
     { path: '/:pathMatch(.*)*', component: NotFound, name: 'NotFound' },
 ]
