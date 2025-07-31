@@ -1,4 +1,6 @@
 <script setup>
+import { computed } from 'vue';
+
 
 const props = defineProps({
     records: {
@@ -7,11 +9,49 @@ const props = defineProps({
     }
 })
 
+
+
 // const bmis = [18, 30, 22.5, 23, 15]
 
 // v-for 
 
 // computed
+const arr = ['羽球', '網球', '籃球'];
+const newArr = [
+    { 'id': '1', 'name': '羽球' },
+    { 'id': '2', 'name': '網球' },
+    { 'id': '3', 'name': '網球' }
+]
+arr.map(x => {
+    let count = 1
+    return {
+        'id': count++,
+        'name': x
+    };
+})
+
+
+const b = [20]
+const nb = [{
+    'bmi': '20',
+    'status': '健康體重'
+}]
+
+const bmiRecords = computed(() => {
+    // Array => [20 , 30 , 33]
+    const newArray = props.records.map(x => {
+        return {
+            'bmi': x,
+            'status': getStatus(x)
+        }
+    })
+    return newArray;
+    // return [{
+    //     'bmi': '20',
+    //     'status': '健康體重'
+    // }];
+})
+
 // Array.map
 
 // BMI < 18.5
@@ -24,6 +64,9 @@ const props = defineProps({
 // 肥胖
 
 function getStatus(bmi) {
+
+    console.log('fn');
+
     let status;
 
     if (bmi < 18.5) {
@@ -47,9 +90,14 @@ function getStatus(bmi) {
 
     <h2>測量記錄</h2>
 
-    <div v-for="(item, index) in props.records" :key="index">
+    <!-- <div v-for="(item, index) in props.records" :key="index">
         BMI：{{ item }} {{ getStatus(item) }}
+    </div> -->
+
+    <div v-for="(item, index) in bmiRecords" :key="index">
+        BMI：{{ item.bmi }} {{ item.status }}
     </div>
+
 
 </template>
 
