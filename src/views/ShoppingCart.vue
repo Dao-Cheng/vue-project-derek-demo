@@ -2,7 +2,7 @@
 import Cart from '@/class/cart';
 import Product from '@/class/product';
 import ProductItem from '@/components/ProductItem.vue';
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 
 const products = ref([
     new Product(1, '麥克雙牛堡', 100),
@@ -23,6 +23,16 @@ function addToCart(product) {
     }
 }
 
+const totalPrice = computed(() => {
+    // XXXX
+    // Array.reduce
+    // const arr = [{ id: 1, 'name': 'XX餐' }]
+    const total1 = carts.value.reduce((total, item) => {
+        return total + item.price * item.count;
+    }, 0);
+
+    return total1;
+})
 
 </script>
 
@@ -36,6 +46,7 @@ function addToCart(product) {
             {{ `${item.name} - ${item.price} X ${item.count}` }}
         </li>
     </ul>
+    <h3>總計：{{ totalPrice }}</h3>
 </template>
 
 <style scoped></style>

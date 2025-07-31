@@ -14,9 +14,14 @@ function addCart() {
 </script>
 
 <template>
-    <h1>{{ props.product.name }}</h1>
-    <h3>{{ props.product.price }}</h3>
-    <button @click="addCart()">加入購物車</button>
+    <div class="card w-50">
+        <div class="card-body">
+            <h5 class="card-title">{{ props.product.name }}</h5>
+            <p class="card-text">{{ props.product.price }}</p>
+            <a href="#" @click="addCart()" class="btn btn-primary">加入購物車</a>
+        </div>
+    </div>
+
 </template>
 
 <style scoped></style>
