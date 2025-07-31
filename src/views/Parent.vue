@@ -2,15 +2,16 @@
 import Child from '@/components/Child.vue';
 
 const title = 'v-bind父組件給的標題'
+const count = 10;
 
 </script>
 
 <template>
 
     <hr />
-    <Child title1="父組件給的標題" />
+    <Child title="父組件給的標題" msg="訊息" :count="count" />
     <br />
-    <Child v-bind:title1="title" />
+    <!-- <Child v-bind:title1="title" :title2="title" /> -->
     <hr />
 
 </template>
