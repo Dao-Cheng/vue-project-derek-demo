@@ -52,6 +52,9 @@
                     <li class="nav-item">
                         <RouterLink :to="{ name: 'ToDoList' }" class="nav-link">4.待辦事項</RouterLink>
                     </li>
+                    <li class="nav-item">
+                        <RouterLink :to="{ name: 'PokemonList' }" class="nav-link">5.寶可夢圖鑑</RouterLink>
+                    </li>
 
                 </ul>
             </div>

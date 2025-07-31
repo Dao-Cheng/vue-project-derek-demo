@@ -15,6 +15,7 @@ import ToDoList from "@/views/ToDoList.vue";
 import Lifecycle from "@/views/Lifecycle.vue";
 import Parent from "@/views/Parent.vue";
 import ShoppingCart from "@/views/ShoppingCart.vue";
+import PokemonList from "@/views/PokemonList.vue";
 
 // 3.定義路由
 const routes = [
@@ -81,6 +82,11 @@ const routes = [
         path: '/ShoppingCart',
         component: ShoppingCart,
         name: 'ShoppingCart'
+    },
+    {
+        path: '/PokemonList',
+        component: PokemonList,
+        name: 'PokemonList'
     },
     { path: '/:pathMatch(.*)*', component: NotFound, name: 'NotFound' },
 ]
