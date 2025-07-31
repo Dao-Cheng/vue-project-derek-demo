@@ -1,5 +1,5 @@
 <script setup>
-import { computed } from 'vue';
+import { computed, ref } from 'vue';
 
 
 const props = defineProps({
@@ -8,8 +8,6 @@ const props = defineProps({
         required: true
     }
 })
-
-
 
 // const bmis = [18, 30, 22.5, 23, 15]
 
@@ -84,6 +82,8 @@ function getStatus(bmi) {
     return status;
 }
 
+const text = ref('');
+
 </script>
 
 <template>
@@ -94,10 +94,12 @@ function getStatus(bmi) {
         BMI：{{ item }} {{ getStatus(item) }}
     </div> -->
 
-    <div v-for="(item, index) in bmiRecords" :key="index">
+    <div v-for="(item, index) in bmiRecords" :key="index" class="alert alert-primary" role="alert">
         BMI：{{ item.bmi }} {{ item.status }}
     </div>
 
+    <input v-model="text"></input>
+    {{ text }}
 
 </template>
 

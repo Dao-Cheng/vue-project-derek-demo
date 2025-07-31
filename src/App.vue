@@ -35,6 +35,9 @@
                         <RouterLink :to="{ name: 'Lifecycle' }" class="nav-link">生命週期</RouterLink>
                     </li>
                     <li class="nav-item">
+                        <RouterLink :to="{ name: 'ShoppingCart' }" class="nav-link">購物車</RouterLink>
+                    </li>
+                    <li class="nav-item">
                         <RouterLink :to="{ name: 'Parent' }" class="nav-link">父子組件</RouterLink>
                     </li>
                     <li class="nav-item">
