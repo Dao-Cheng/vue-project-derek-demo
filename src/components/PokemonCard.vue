@@ -4,14 +4,17 @@
 
 <template>
 
-    <div>
-        <div>
-            XXXX
+    <div class="card">
+        <div class="image">
+            <slot name="image"></slot>
         </div>
-        <ul>
-            <li>名字：</li>
-            <li>屬性：</li>
-            <li>編號：</li>
+        <ul class="info">
+            <li>名字：<slot name="name"></slot>
+            </li>
+            <li>屬性：<slot name="types"></slot>
+            </li>
+            <li>編號：<slot name="number"></slot>
+            </li>
         </ul>
     </div>
 
@@ -21,7 +24,7 @@
 
 <style scoped>
 .card {
-    background-color: yellowgreen;
+    background-color: rgb(229, 246, 196);
     width: 200px;
     height: 200px;
     border-radius: 8px;
