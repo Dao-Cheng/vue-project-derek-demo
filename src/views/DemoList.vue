@@ -18,10 +18,11 @@ import Lifecycle from './Lifecycle.vue';
 import Demo14 from '@/components/Demo/Demo14.vue';
 import Demo15 from '@/components/Demo/Demo15.vue';
 import Demo16 from '@/components/Demo/Demo16.vue';
+import Demo17 from '@/components/Demo/Demo17.vue';
 //                     0      1      2
 const componentList = [Demo1, Demo2, Demo3, Demo4, Demo5, Demo6,
     Demo7, Demo8, Demo9, Demo10, Demo11, Demo12, Demo13, Lifecycle, Demo14,
-    Demo15, Demo16];
+    Demo15, Demo16, Demo17];
 
 const selected = ref(16);
 

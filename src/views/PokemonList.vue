@@ -2,6 +2,8 @@
 import PokemonCard from '@/components/PokemonCard.vue';
 import pokemonData from '../data/pokemon.json';
 import { computed, ref } from 'vue';
+import PokemonSelect from '@/components/PokemonSelect.vue';
+import ProjectButton from '@/components/ProjectButton.vue';
 
 const pokemons = ref(pokemonData);
 
@@ -64,11 +66,37 @@ function searchByType() {
     }
 }
 
+const selected = ref('');
+
+function searchBySelect() {
+    // 判斷是否有值
+    if (selected.value) {
+        // Yes 篩選
+        // filter
+        // == 只做值比較   1 = '1'
+        // === 值與型別都比較 1 != '1'
+        pokemons.value = pokemonData.filter(x => x.number === selected.value);
+        // SQL     =
+        // Java C# ==
+        // JS      ===
+    } else {
+        // No 放回原始值   
+        pokemons.value = pokemonData;
+    }
+}
+
 </script>
 
 <template>
 
-    搜尋屬性：<input v-model="searchType" @keyup="searchByType()" />
+    <div>
+        搜尋屬性：<input v-model="searchType" @keyup="searchByType()" />
+    </div>
+    <div>
+        選擇名字：<PokemonSelect v-model="selected"></PokemonSelect>
+        {{ selected }}
+        <ProjectButton type="search" @p-click="searchBySelect()"></ProjectButton>
+    </div>
     <div class="panel">
         <PokemonCard v-for="(pokemon, index) in pokemonList" :key="pokemon.number" :name="pokemon.name">
             <template #image>
