@@ -1,5 +1,7 @@
 <script setup>
 
+const props = defineProps(['name', 'types', 'number']);
+
 </script>
 
 <template>
@@ -9,7 +11,7 @@
             <slot name="image"></slot>
         </div>
         <ul class="info">
-            <li>名字：<slot name="name"></slot>
+            <li>名字：{{ props.name }}
             </li>
             <li>屬性：<slot name="types"></slot>
             </li>
