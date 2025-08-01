@@ -40,22 +40,29 @@
                     <li class="nav-item">
                         <RouterLink :to="{ name: 'Parent' }" class="nav-link">父子組件</RouterLink>
                     </li>
-                    <li class="nav-item">
-                        <RouterLink :to="{ name: 'BMI' }" class="nav-link">1.BMI計算機</RouterLink>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            功能練習
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li>
+                                <RouterLink :to="{ name: 'BMI' }" class="dropdown-item">1.BMI計算機</RouterLink>
+                            </li>
+                            <li>
+                                <RouterLink :to="{ name: 'FToC' }" class="dropdown-item">2.溫度轉換</RouterLink>
+                            </li>
+                            <li>
+                                <RouterLink :to="{ name: 'StudentScore' }" class="dropdown-item">3.學生成績單</RouterLink>
+                            </li>
+                            <li>
+                                <RouterLink :to="{ name: 'ToDoList' }" class="dropdown-item">4.待辦事項</RouterLink>
+                            </li>
+                            <li>
+                                <RouterLink :to="{ name: 'PokemonList' }" class="dropdown-item">5.寶可夢圖鑑</RouterLink>
+                            </li>
+                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <RouterLink :to="{ name: 'FToC' }" class="nav-link">2.溫度轉換</RouterLink>
-                    </li>
-                    <li class="nav-item">
-                        <RouterLink :to="{ name: 'StudentScore' }" class="nav-link">3.學生成績單</RouterLink>
-                    </li>
-                    <li class="nav-item">
-                        <RouterLink :to="{ name: 'ToDoList' }" class="nav-link">4.待辦事項</RouterLink>
-                    </li>
-                    <li class="nav-item">
-                        <RouterLink :to="{ name: 'PokemonList' }" class="nav-link">5.寶可夢圖鑑</RouterLink>
-                    </li>
-
                 </ul>
             </div>
         </div>

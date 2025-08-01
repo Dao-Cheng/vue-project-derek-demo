@@ -20,6 +20,7 @@ const calBMI = () => {
         身高(公分cm)：<input type="number" v-model="height" />
         體重(公斤kg)：<input type="number" v-model="weight" />
         <br />
+        <ProjectButton @click="calBMI()" type="cal"></ProjectButton>
         <button @click="calBMI()" class="btn btn-success"><i class="bi bi-calculator"></i>計算</button>
         <br />
         <span :hidden="isHidden">您的BMI：{{ bmi }}</span>
