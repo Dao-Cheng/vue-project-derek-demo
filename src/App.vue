@@ -59,6 +59,10 @@
                                 <RouterLink :to="{ name: 'ToDoList' }" class="dropdown-item">4.待辦事項</RouterLink>
                             </li>
                             <li>
+                                <RouterLink :to="{ name: 'PiniaToDoList' }" class="dropdown-item">4-1.Pinia待辦事項
+                                </RouterLink>
+                            </li>
+                            <li>
                                 <RouterLink :to="{ name: 'PokemonList' }" class="dropdown-item">5.寶可夢圖鑑</RouterLink>
                             </li>
                         </ul>

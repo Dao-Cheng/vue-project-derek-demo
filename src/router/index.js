@@ -16,6 +16,7 @@ import Lifecycle from "@/views/Lifecycle.vue";
 import Parent from "@/views/Parent.vue";
 import ShoppingCart from "@/views/ShoppingCart.vue";
 import PokemonList from "@/views/PokemonList.vue";
+import PiniaToDoList from "@/views/PiniaToDoList.vue";
 
 // 3.定義路由
 const routes = [
@@ -82,6 +83,12 @@ const routes = [
         path: '/ShoppingCart',
         component: ShoppingCart,
         name: 'ShoppingCart'
+    },
+
+    {
+        path: '/PiniaToDoList',
+        component: PiniaToDoList,
+        name: 'PiniaToDoList'
     },
     {
         path: '/PokemonList',
