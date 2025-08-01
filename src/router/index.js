@@ -17,6 +17,7 @@ import Parent from "@/views/Parent.vue";
 import ShoppingCart from "@/views/ShoppingCart.vue";
 import PokemonList from "@/views/PokemonList.vue";
 import PiniaToDoList from "@/views/PiniaToDoList.vue";
+import PiniaShoppingCart from "@/views/PiniaShoppingCart.vue";
 
 // 3.定義路由
 const routes = [
@@ -89,6 +90,11 @@ const routes = [
         path: '/PiniaToDoList',
         component: PiniaToDoList,
         name: 'PiniaToDoList'
+    },
+    {
+        path: '/PiniaShoppingCart',
+        component: PiniaShoppingCart,
+        name: 'PiniaShoppingCart'
     },
     {
         path: '/PokemonList',

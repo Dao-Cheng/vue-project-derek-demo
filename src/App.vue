@@ -1,7 +1,9 @@
 <script setup>
 
 import { useToDoListStore } from '@/stores/todoList';
+import { useCartStore } from './stores/cart';
 const toDoListStore = useToDoListStore();
+const cartStore = useCartStore();
 
 </script>
 
@@ -39,7 +41,14 @@ const toDoListStore = useToDoListStore();
                         <RouterLink :to="{ name: 'Lifecycle' }" class="nav-link">生命週期</RouterLink>
                     </li>
                     <li class="nav-item">
-                        <RouterLink :to="{ name: 'ShoppingCart' }" class="nav-link">購物車</RouterLink>
+                        <RouterLink :to="{ name: 'ShoppingCart' }" class="nav-link">購物車
+                            <span class="badge bg-danger" v-if="cartStore.count > 0">
+                                {{ cartStore.count }}
+                            </span>
+                        </RouterLink>
+                    </li>
+                    <li class="nav-item">
+                        <RouterLink :to="{ name: 'PiniaShoppingCart' }" class="nav-link">Pinia購物車</RouterLink>
                     </li>
                     <li class="nav-item">
                         <RouterLink :to="{ name: 'Parent' }" class="nav-link">父子組件</RouterLink>
