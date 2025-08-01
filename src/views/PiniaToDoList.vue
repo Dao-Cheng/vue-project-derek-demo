@@ -1,37 +1,14 @@
 <script setup>
-import { computed, ref } from 'vue';
+import { useToDoListStore } from '@/stores/todoList';
+import { ref } from 'vue';
 
-
-// const todos = [{
-//     id: Date.now(),
-//     text: 'test',
-//     isDone: true
-// }]
+const toDoListStore = useToDoListStore();
 const newToDo = ref(null);
-const todos = ref([]);
 
-
-function addTodo() {
-    // true => 1 -1 true 'XXX'(任意字串)
-    // false => 0 ''(空字串) false null undefined
-    const inputText = newToDo.value.trim();
-    if (inputText !== '') {
-        todos.value.push({
-            id: Date.now(),
-            text: inputText,
-            isDone: false
-        })
-        newToDo.value = '';
-    }
+function add() {
+    toDoListStore.addTodo(newToDo);
+    newToDo.value = '';
 }
-
-function removeTodo(id) {
-    todos.value = todos.value.filter(x => x.id !== id);
-}
-
-const doneCount = computed(() => {
-    return todos.value.filter(x => x.isDone).length;
-})
 
 </script>
 
@@ -40,14 +17,15 @@ const doneCount = computed(() => {
     <h1>Pinia待辦清單</h1>
 
     <div style="display: flex;">
-        <input @keyup.enter="addTodo()" type="text" placeholder="輸入新的待辦事項" v-model="newToDo" />
-        <button class="btn btn-success btn-sm" @click="addTodo()"><i class="bi bi-plus"></i>新增</button>
+        <input type="text" placeholder="輸入新的待辦事項" v-model="newToDo" />
+        <button class="btn btn-success btn-sm" @click="toDoListStore.addTodo(newToDo); newToDo = ''">
+            <i class="bi bi-plus"></i>新增</button>
     </div>
 
     <table>
         <tbody>
             <TransitionGroup>
-                <tr v-for="(item, key) in todos" :key="item.id">
+                <tr v-for="(item, key) in toDoListStore.todos" :key="item.id">
                     <td>
                         <input type="checkbox" v-model="item.isDone" />
                     </td>
@@ -55,14 +33,15 @@ const doneCount = computed(() => {
                         <span :class="{ done: item.isDone }">{{ item.text }}</span>
                     </td>
                     <td>
-                        <button class="btn btn-danger btn-sm" @click="removeTodo(item.id)"><i
-                                class="bi bi-trash"></i>刪除</button>
+                        <button class="btn btn-danger btn-sm" @click="toDoListStore.removeTodo(item.id)">
+                            <i class="bi bi-trash"></i>刪除
+                        </button>
                     </td>
                 </tr>
             </TransitionGroup>
         </tbody>
     </table>
-    <p>共 {{ todos.length }} 項，已完成 {{ doneCount }} 項</p>
+    <p>共 {{ toDoListStore.count }} 項，已完成 {{ toDoListStore.doneCount }} 項</p>
 
 </template>
 
@@ -75,8 +54,8 @@ const doneCount = computed(() => {
 .v-enter-active,
 .v-leave-active {
     transition:
-        opacity 2s ease-out,
-        transform 2s cubic-bezier(1, .18, .46, 1.48);
+        opacity 1s ease-out,
+        transform 1s cubic-bezier(1, .18, .46, 1.48);
 }
 
 

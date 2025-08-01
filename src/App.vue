@@ -1,4 +1,8 @@
 <script setup>
+
+import { useToDoListStore } from '@/stores/todoList';
+const toDoListStore = useToDoListStore();
+
 </script>
 
 <template>
@@ -43,7 +47,9 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
-                            功能練習
+                            功能練習<span class="badge bg-danger" v-if="toDoListStore.waitingCount > 0"><i
+                                    class="bi bi-exclamation-lg"></i>
+                            </span>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li>
@@ -59,7 +65,9 @@
                                 <RouterLink :to="{ name: 'ToDoList' }" class="dropdown-item">4.待辦事項</RouterLink>
                             </li>
                             <li>
-                                <RouterLink :to="{ name: 'PiniaToDoList' }" class="dropdown-item">4-1.Pinia待辦事項
+                                <RouterLink :to="{ name: 'PiniaToDoList' }" class="dropdown-item">4-1.Pinia待辦事項<span
+                                        class="badge bg-danger" v-if="toDoListStore.waitingCount > 0">{{
+                                            toDoListStore.waitingCount }}</span>
                                 </RouterLink>
                             </li>
                             <li>
